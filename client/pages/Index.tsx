@@ -29,61 +29,63 @@ export default function Index() {
 
   const services = [
     {
-      icon: <Code className="w-8 h-8" />,
-      title: "Software Development",
-      description:
-        "Custom software solutions including web applications, mobile apps, enterprise systems, and digital transformation services.",
-      link: "/software",
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Interior Design",
-      description:
-        "Complete interior design services for residential, commercial, and corporate spaces with modern aesthetics and functionality.",
-      link: "/interior-design",
-    },
-    {
       icon: <Settings className="w-8 h-8" />,
       title: "Logistics Solutions",
       description:
         "Comprehensive logistics and supply chain management solutions including transportation, warehousing, and distribution.",
       link: "/logistics",
     },
+
     {
-      icon: <Network className="w-8 h-8" />,
-      title: "Commercial Interiors",
+      icon: <Users className="w-8 h-8" />,
+      title: "Corporate Interior Design",
       description:
-        "Office spaces, retail stores, restaurants, and hospitality interiors designed for maximum impact and functionality.",
-      link: "#",
+        "Complete interior design services for residential, commercial, and corporate spaces with modern aesthetics and functionality.",
+      link: "/interior-design",
     },
     {
-      icon: <Smartphone className="w-8 h-8" />,
-      title: "Mobile Applications",
+      icon: <Code className="w-8 h-8" />,
+      title: "Software Development",
       description:
-        "iOS and Android mobile app development with modern UI/UX design and seamless user experiences.",
-      link: "#",
+        "Custom software solutions including web applications, mobile apps, enterprise systems, and digital transformation services.",
+      link: "/software",
     },
-    {
-      icon: <FileCheck className="w-8 h-8" />,
-      title: "Logistics Management",
-      description:
-        "End-to-end logistics management including inventory control, fleet management, and supply chain optimization.",
-      link: "#",
-    },
-    {
-      icon: <Wrench className="w-8 h-8" />,
-      title: "Project Consulting",
-      description:
-        "Expert consulting services for software projects, interior design planning, and logistics optimization strategies.",
-      link: "#",
-    },
-    {
-      icon: <Award className="w-8 h-8" />,
-      title: "Quality Assurance",
-      description:
-        "Comprehensive testing and quality assurance services ensuring highest standards across all our service domains.",
-      link: "#",
-    },
+ 
+    // {
+    //   icon: <Network className="w-8 h-8" />,
+    //   title: "Commercial Interiors",
+    //   description:
+    //     "Office spaces, retail stores, restaurants, and hospitality interiors designed for maximum impact and functionality.",
+    //   link: "#",
+    // },
+    // {
+    //   icon: <Smartphone className="w-8 h-8" />,
+    //   title: "Mobile Applications",
+    //   description:
+    //     "iOS and Android mobile app development with modern UI/UX design and seamless user experiences.",
+    //   link: "#",
+    // },
+    // {
+    //   icon: <FileCheck className="w-8 h-8" />,
+    //   title: "Logistics Management",
+    //   description:
+    //     "End-to-end logistics management including inventory control, fleet management, and supply chain optimization.",
+    //   link: "#",
+    // },
+    // {
+    //   icon: <Wrench className="w-8 h-8" />,
+    //   title: "Project Consulting",
+    //   description:
+    //     "Expert consulting services for software projects, interior design planning, and logistics optimization strategies.",
+    //   link: "#",
+    // },
+    // {
+    //   icon: <Award className="w-8 h-8" />,
+    //   title: "Quality Assurance",
+    //   description:
+    //     "Comprehensive testing and quality assurance services ensuring highest standards across all our service domains.",
+    //   link: "#",
+    // },
   ];
 
   const features = [
@@ -108,7 +110,7 @@ export default function Index() {
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2Ffdc28ddde5e54c3f9d3cea402d3f7131%2Fcf30f0ca4be14927af75698ec9d7768b?format=webp&width=800"
                   alt="Bhavya Enterprises Logo"
-                  className="w-8 h-8"
+                  className="w-12 h-12"
                 />
                 <span className="text-xl font-bold bg-gradient-to-r from-brand-600 to-tech-600 bg-clip-text text-transparent">
                   Bhavya Enterprises
@@ -271,21 +273,21 @@ export default function Index() {
             {/* Trust Indicators */}
             <div className="mt-16 grid grid-cols-3 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-bold text-brand-600">500+</div>
+                <div className="text-3xl font-bold text-brand-600">100+</div>
                 <div className="text-sm text-muted-foreground">
                   Interior Projects
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-tech-600">200+</div>
-                <div className="text-sm text-muted-foreground">
-                  Software Solutions
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-brand-600">150+</div>
                 <div className="text-sm text-muted-foreground">
                   Logistics Partners
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-brand-600">New Vertical Launch</div>
+                <div className="text-sm text-muted-foreground">
+                Software Development Services
                 </div>
               </div>
             </div>
@@ -310,7 +312,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <Link to={service.link} key={index}>
                 <Card className="group hover:shadow-lg transition-all duration-300 border-border/50">
@@ -453,7 +455,7 @@ export default function Index() {
               </Card>
             </div>
 
-            <div className="text-center">
+            {/* <div className="text-center">
               <Button
                 variant="outline"
                 size="lg"
@@ -461,7 +463,7 @@ export default function Index() {
               >
                 View Complete Portfolio
               </Button>
-            </div>
+            </div> */}
           </div>
 
           {/* Software Development Portfolio */}
@@ -824,7 +826,7 @@ export default function Index() {
                 Experience reliable, fast, and secure logistics services with
                 our comprehensive courier solutions.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/logistics">
                   <Button
                     size="lg"
@@ -840,14 +842,14 @@ export default function Index() {
                 >
                   <a href="https://www.bhavyaenterprises.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-600">www.bhavyaenterprises.com</a>
                 </Button>
-              </div>
+              </div> */}
             </div>
 
             {/* Logistics Statistics */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 bg-white rounded-2xl p-8 shadow-lg">
               <div className="text-center">
                 <div className="text-3xl font-bold text-brand-600 mb-2">
-                  10,000+
+                1000000+
                 </div>
                 <div className="text-sm text-muted-foreground">
                   Packages Delivered
@@ -995,8 +997,7 @@ export default function Index() {
                 <p>
                   <p>SCO 393, 2nd floor Sector - 37 D, Chandigarh</p>
                   <p className="mt-2">B.O. : Plot No. 1025, Rani Sati Nagar, Nirman Nagar, Jaipur-302019</p>innovation, and customer
-                  satisfaction has earned us the trust of over 500 clients
-                  across Mumbai, Maharashtra, and beyond.
+                  satisfaction has earned us the trust of over 500+ clients across, Delhi,  Mumbai, Punjab, Rajasthan, and beyond.
                 </p>
               </div>
 
@@ -1065,12 +1066,13 @@ export default function Index() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 <Card className="p-4">
                   <div className="flex items-center space-x-3">
-                    <a href="tel:+919988818489" className="hover:text-brand-600">+91 99888 18489</a><br />
-                    <a href="tel:0172-4031600" className="hover:text-brand-600">0172-4031600</a>
+                 
                     <div>
                       <div className="font-medium">Phone</div>
                       <div className="text-sm text-muted-foreground">
-                        +91 - 9821019626
+                        +91 - 9821019626 <br/>
+                        <a href="tel:+919988818489" className="hover:text-brand-600">+91 99888 18489</a><br />
+                        <a href="tel:0172-4031600" className="hover:text-brand-600">0172-4031600</a>
                       </div>
                     </div>
                   </div>
@@ -1120,29 +1122,29 @@ export default function Index() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-              <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+              {/* <Card className="p-6 text-center hover:shadow-lg transition-shadow">
                 <div className="font-bold text-2xl text-brand-600 mb-2">
                   50+
                 </div>
                 <div className="text-sm text-muted-foreground">
                   Tech Companies
                 </div>
-              </Card>
-              <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              </Card> */}
+              {/* <Card className="p-6 text-center hover:shadow-lg transition-shadow">
                 <div className="font-bold text-2xl text-tech-600 mb-2">
                   100+
                 </div>
                 <div className="text-sm text-muted-foreground">
                   Retail Businesses
                 </div>
-              </Card>
+              </Card> */}
               <Card className="p-6 text-center hover:shadow-lg transition-shadow">
                 <div className="font-bold text-2xl text-brand-600 mb-2">
-                  75+
+                  400+
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  Corporate Offices
+                Bank/ NBFC /Corporate Offices
                 </div>
               </Card>
               <Card className="p-6 text-center hover:shadow-lg transition-shadow">
@@ -1151,14 +1153,14 @@ export default function Index() {
                   Hotels & Restaurants
                 </div>
               </Card>
-              <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              {/* <Card className="p-6 text-center hover:shadow-lg transition-shadow">
                 <div className="font-bold text-2xl text-brand-600 mb-2">
                   150+
                 </div>
                 <div className="text-sm text-muted-foreground">
                   E-commerce Partners
                 </div>
-              </Card>
+              </Card> */}
               <Card className="p-6 text-center hover:shadow-lg transition-shadow">
                 <div className="font-bold text-2xl text-tech-600 mb-2">
                   200+
@@ -1299,7 +1301,7 @@ export default function Index() {
               </div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-tech-600 mb-2">500+</div>
+              <div className="text-3xl font-bold text-tech-600 mb-2">400+</div>
               <div className="text-sm text-muted-foreground">Happy Clients</div>
             </div>
             <div className="text-center">
@@ -1307,7 +1309,7 @@ export default function Index() {
               <div className="text-sm text-muted-foreground">Team Members</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-tech-600 mb-2">15+</div>
+              <div className="text-3xl font-bold text-tech-600 mb-2">5+</div>
               <div className="text-sm text-muted-foreground">
                 Years Experience
               </div>

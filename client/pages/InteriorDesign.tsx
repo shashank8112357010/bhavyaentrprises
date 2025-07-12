@@ -167,14 +167,14 @@ export default function InteriorDesign() {
           </p>
           <div className="mt-10 flex justify-center">
             <a href="#portfolio">
-                <Button
+              <Button
                 size="lg"
                 className="bg-gradient-to-r from-brand-600 to-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                >
+              >
                 View Our Work
-                </Button>
+              </Button>
             </a>
-        </div>
+          </div>
         </div>
       </section>
 
@@ -230,7 +230,7 @@ export default function InteriorDesign() {
           </div>
         </div>
       </section>
-      
+
       {/* Industries Served Section */}
       <section id="industries" className="py-16 lg:py-24">
         <div className="container mx-auto px-4 text-center">
@@ -321,6 +321,31 @@ export default function InteriorDesign() {
                   </div>
                 </div>
               </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Images Gallery Section */}
+      <section id="gallery" className="py-16 lg:py-24 bg-gradient-to-br from-muted/30 to-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Our Interior Design Portfolio</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Explore our real project spaces, designed for comfort, style, and productivity.
+            </p>
+          </div>
+          <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 space-y-6 max-w-7xl mx-auto">
+            {[1,2,3,4,5,6,7,8].map((num) => (
+              <div key={num} className="relative mb-6 rounded-2xl overflow-hidden shadow-xl bg-white transition-transform hover:scale-105 group">
+                <img
+                  src={`/Interior${num}.png`}
+                  alt={`Interior Project ${num}`}
+                  className="w-full h-auto object-cover aspect-[4/5] group-hover:brightness-90 transition-all duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Optionally, add a caption or icon overlay here */}
+              </div>
             ))}
           </div>
         </div>
