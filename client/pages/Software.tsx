@@ -141,12 +141,16 @@ export default function Software() {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
             We use a modern stack of technologies to build high-performance applications.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            {technologies.map((tech) => (
-              <Badge key={tech} variant="outline" className="text-lg px-6 py-2 border-tech-200 text-tech-800">
-                {tech}
-              </Badge>
-            ))}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll-x space-x-8 py-4">
+              {[...technologies, ...technologies].map((tech, index) => (
+                <div key={index} className="flex-shrink-0">
+                  <Badge variant="outline" className="text-lg px-6 py-3 border-2 border-tech-200 text-tech-800 hover:border-tech-500 hover:bg-tech-50 hover:text-tech-700 transition-all duration-300 hover:scale-105 hover:shadow-md whitespace-nowrap">
+                    {tech}
+                  </Badge>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -159,8 +163,13 @@ export default function Software() {
             Our software solutions are tailored to the unique needs of various industries.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            {industriesServed.map((industry) => (
-              <Badge key={industry} variant="outline" className="text-lg px-6 py-2">
+            {industriesServed.map((industry, index) => (
+              <Badge 
+                key={industry} 
+                variant="outline" 
+                className="text-lg px-6 py-3 border-2 border-tech-200 text-tech-800 hover:border-tech-500 hover:bg-tech-50 hover:text-tech-700 transition-all duration-300 hover:scale-105 hover:shadow-md animate-fade-in-up"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 {industry}
               </Badge>
             ))}
@@ -178,10 +187,14 @@ export default function Software() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {whyUs.map((item) => (
-              <Card key={item.title} className="p-6">
+            {whyUs.map((item, index) => (
+              <Card 
+                key={item.title} 
+                className="p-6 hover-lift animate-fade-in-up"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 <div className="flex items-center gap-4">
-                  <div className="text-tech-600">{item.icon}</div>
+                  <div className="text-tech-600 animate-float">{item.icon}</div>
                   <div>
                     <h3 className="text-lg font-semibold">{item.title}</h3>
                     <p className="text-sm text-muted-foreground">{item.description}</p>
@@ -241,7 +254,7 @@ export default function Software() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Location</h3>
               <p className="text-muted-foreground mb-4">Visit our office</p>
-              <address className="text-sm not-italic text-muted-foreground leading-relaxed">
+              <address className="text-brand-600 hover:text-brand-700 font-medium">
                 SCO 393, 2nd floor Sector - 37 D, Chandigarh
                 <br /><br />
                 <strong>B.O. :</strong> Plot No. 1025, Rani Sati Nagar, Nirman Nagar, Jaipur-302019
