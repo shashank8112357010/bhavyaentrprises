@@ -22,7 +22,9 @@ import {
   X,
   Truck,
   Palette,
+  PhoneCall
 } from "lucide-react";
+import Navbar from "@/components/ui/Navbar";
 
 export default function Index() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -102,123 +104,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4">
-          <div className="flex h-16 items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2Ffdc28ddde5e54c3f9d3cea402d3f7131%2Fcf30f0ca4be14927af75698ec9d7768b?format=webp&width=800"
-                  alt="Bhavya Enterprises Logo"
-                  className="w-12 h-12"
-                />
-                <span className="text-xl font-bold bg-gradient-to-r from-brand-600 to-tech-600 bg-clip-text text-transparent">
-                  Bhavya Enterprises
-                </span>
-              </div>
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <Link
-                to="/interior-design"
-                className="text-sm font-medium transition-colors hover:text-primary flex items-center gap-1"
-              >
-                <Palette className="w-4 h-4" />
-                Interior Design
-              </Link>
-              <Link
-                to="/software"
-                className="text-sm font-medium transition-colors hover:text-primary flex items-center gap-1"
-              >
-                <Code className="w-4 h-4" />
-                Software
-              </Link>
-              <Link
-                to="/logistics"
-                className="text-sm font-medium transition-colors hover:text-primary flex items-center gap-1"
-              >
-                <Truck className="w-4 h-4" />
-                Logistics
-              </Link>
-              <a
-                href="#contact"
-                className="text-sm font-medium transition-colors hover:text-primary"
-              >
-                Contact
-              </a>
-              <Link to="/start-project">
-                <Button
-                  size="sm"
-                  className="bg-gradient-to-r from-brand-500 to-tech-500 hover:from-brand-600 hover:to-tech-600"
-                >
-                  Start Your Project
-                </Button>
-              </Link>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-              >
-                {isMenuOpen ? (
-                  <X className="w-5 h-5" />
-                ) : (
-                  <Menu className="w-5 h-5" />
-                )}
-              </Button>
-            </div>
-          </div>
-
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="md:hidden border-t">
-              <div className="px-2 pt-2 pb-3 space-y-1">
-                <Link
-                  to="/interior-design"
-                  className="block px-3 py-2 text-base font-medium flex items-center gap-2"
-                >
-                  <Palette className="w-4 h-4" />
-                  Interior Design
-                </Link>
-                <Link
-                  to="/software"
-                  className="block px-3 py-2 text-base font-medium flex items-center gap-2"
-                >
-                  <Code className="w-4 h-4" />
-                  Software
-                </Link>
-                <Link
-                  to="/logistics"
-                  className="block px-3 py-2 text-base font-medium flex items-center gap-2"
-                >
-                  <Truck className="w-4 h-4" />
-                  Logistics
-                </Link>
-                <a
-                  href="#contact"
-                  className="block px-3 py-2 text-base font-medium"
-                >
-                  Contact
-                </a>
-                <div className="px-3 py-2">
-                  <Link to="/start-project">
-                    <Button
-                      size="sm"
-                      className="w-full bg-gradient-to-r from-brand-500 to-tech-500 hover:from-brand-600 hover:to-tech-600"
-                    >
-                      Start Your Project
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </nav>
+    <Navbar />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-brand-50 via-background to-tech-50 py-20 lg:py-32">
@@ -296,7 +182,7 @@ export default function Index() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 lg:py-32">
+      <section id="services" className="py-8 lg:py-12">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-brand-100 text-brand-800 border-brand-200">
@@ -335,7 +221,7 @@ export default function Index() {
       </section>
 
       {/* Portfolio Sections */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-brand-50/50 to-tech-50/50">
+      <section className="py-8 lg:py-12 bg-gradient-to-br from-brand-50/50 to-tech-50/50">
         <div className="container mx-auto px-4">
           {/* Interior Design Portfolio */}
           <div className="mb-20">
@@ -597,22 +483,65 @@ export default function Index() {
                   including AI, machine learning, and modern frameworks to
                   create solutions that drive business growth.
                 </p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-tech-500" />
-                    <span className="text-sm">AI/ML Integration</span>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="group relative p-4 rounded-xl bg-gradient-to-r from-tech-50 to-tech-100 border border-tech-200 hover:border-tech-300 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 animate-in slide-in-from-bottom-4 duration-700 delay-100">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0">
+                        <div className="w-10 h-10 rounded-full bg-tech-500 flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 hover:animate-pulse">
+                          <CheckCircle className="w-5 h-5 text-white group-hover:animate-bounce" />
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <span className="font-semibold text-tech-900 group-hover:text-tech-700 transition-colors duration-300 group-hover:scale-105 transform origin-left">AI/ML Integration</span>
+                        <p className="text-xs text-tech-600 mt-1 group-hover:text-tech-500 transition-colors duration-300">Advanced machine learning solutions</p>
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-tech-400/0 to-tech-500/0 group-hover:from-tech-400/5 group-hover:to-tech-500/10 transition-all duration-500 pointer-events-none"></div>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-tech-500" />
-                    <span className="text-sm">Cloud Solutions</span>
+                  
+                  <div className="group relative p-4 rounded-xl bg-gradient-to-r from-tech-50 to-tech-100 border border-tech-200 hover:border-tech-300 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 animate-in slide-in-from-bottom-4 duration-700 delay-200">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0">
+                        <div className="w-10 h-10 rounded-full bg-tech-500 flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 hover:animate-pulse">
+                          <CheckCircle className="w-5 h-5 text-white group-hover:animate-bounce" />
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <span className="font-semibold text-tech-900 group-hover:text-tech-700 transition-colors duration-300 group-hover:scale-105 transform origin-left">Cloud Solutions</span>
+                        <p className="text-xs text-tech-600 mt-1 group-hover:text-tech-500 transition-colors duration-300">Scalable cloud infrastructure</p>
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-tech-400/0 to-tech-500/0 group-hover:from-tech-400/5 group-hover:to-tech-500/10 transition-all duration-500 pointer-events-none"></div>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-tech-500" />
-                    <span className="text-sm">Mobile Apps</span>
+                  
+                  <div className="group relative p-4 rounded-xl bg-gradient-to-r from-tech-50 to-tech-100 border border-tech-200 hover:border-tech-300 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 animate-in slide-in-from-bottom-4 duration-700 delay-300">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0">
+                        <div className="w-10 h-10 rounded-full bg-tech-500 flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 hover:animate-pulse">
+                          <CheckCircle className="w-5 h-5 text-white group-hover:animate-bounce" />
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <span className="font-semibold text-tech-900 group-hover:text-tech-700 transition-colors duration-300 group-hover:scale-105 transform origin-left">Mobile Apps</span>
+                        <p className="text-xs text-tech-600 mt-1 group-hover:text-tech-500 transition-colors duration-300">Cross-platform mobile development</p>
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-tech-400/0 to-tech-500/0 group-hover:from-tech-400/5 group-hover:to-tech-500/10 transition-all duration-500 pointer-events-none"></div>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-tech-500" />
-                    <span className="text-sm">Enterprise Systems</span>
+                  
+                  <div className="group relative p-4 rounded-xl bg-gradient-to-r from-tech-50 to-tech-100 border border-tech-200 hover:border-tech-300 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 animate-in slide-in-from-bottom-4 duration-700 delay-400">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0">
+                        <div className="w-10 h-10 rounded-full bg-tech-500 flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 hover:animate-pulse">
+                          <CheckCircle className="w-5 h-5 text-white group-hover:animate-bounce" />
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <span className="font-semibold text-tech-900 group-hover:text-tech-700 transition-colors duration-300 group-hover:scale-105 transform origin-left">Enterprise Systems</span>
+                        <p className="text-xs text-tech-600 mt-1 group-hover:text-tech-500 transition-colors duration-300">Robust business solutions</p>
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-tech-400/0 to-tech-500/0 group-hover:from-tech-400/5 group-hover:to-tech-500/10 transition-all duration-500 pointer-events-none"></div>
                   </div>
                 </div>
               </div>
@@ -885,7 +814,7 @@ export default function Index() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 lg:py-32">
+      <section className="py-8 lg:py-12">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -898,24 +827,39 @@ export default function Index() {
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 From creating stunning interior spaces to developing innovative
                 software solutions and optimizing supply chains, we bring
-                unmatched expertise across three key industries.
+                unmatched expertise across these key industries.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {features.map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-tech-500 flex-shrink-0" />
-                    <span className="text-sm font-medium">{feature}</span>
+                  <div 
+                    key={index} 
+                    className="group relative p-4 rounded-xl bg-gradient-to-r from-brand-50 to-tech-50 border border-brand-200 hover:border-brand-300 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 animate-in slide-in-from-bottom-4 duration-700"
+                    style={{ animationDelay: `${(index + 1) * 100}ms` }}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-brand-500 to-tech-500 flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 hover:animate-pulse">
+                          <CheckCircle className="w-5 h-5 text-white group-hover:animate-bounce" />
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <span className="font-semibold text-brand-900 group-hover:text-brand-700 transition-colors duration-300 group-hover:scale-105 transform origin-left">{feature}</span>
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-brand-400/0 to-tech-400/0 group-hover:from-brand-400/5 group-hover:to-tech-400/10 transition-all duration-500 pointer-events-none"></div>
                   </div>
                 ))}
               </div>
 
-              <Button
-                size="lg"
-                className="mt-8 bg-gradient-to-r from-tech-500 to-brand-500 hover:from-tech-600 hover:to-brand-600"
-              >
-                Learn More About Us
-              </Button>
+              <Link to="/software">
+                <Button
+                  size="lg"
+                  className="mt-8 bg-gradient-to-r from-tech-500 to-brand-500 hover:from-tech-600 hover:to-brand-600"
+                >
+                  Learn More About Us
+                </Button>
+              </Link>
             </div>
 
             <div className="relative">
@@ -959,7 +903,7 @@ export default function Index() {
       </section>
 
       {/* Company Information */}
-      <section className="py-20 lg:py-32">
+      <section className="py-8 lg:py-12">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-brand-100 text-brand-800 border-brand-200">
@@ -1066,7 +1010,7 @@ export default function Index() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 <Card className="p-4">
                   <div className="flex items-center space-x-3">
-                 
+                 <PhoneCall className="w-5 h-5 text-tech-500" />
                     <div>
                       <div className="font-medium">Phone</div>
                       <div className="text-sm text-muted-foreground">
@@ -1107,7 +1051,7 @@ export default function Index() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> 
           </div>
 
           {/* Our Clients */}
@@ -1209,7 +1153,7 @@ export default function Index() {
               <h4 className="text-xl font-bold mb-4">Project Success</h4>
               <p className="text-muted-foreground mb-4">
                 Successfully completed over 800 projects with 98% client
-                satisfaction rate across all domains.
+                satisfaction rate across all major domains.
               </p>
               <div className="text-2xl font-bold text-brand-600">800+</div>
               <div className="text-sm text-muted-foreground">
@@ -1221,7 +1165,7 @@ export default function Index() {
       </section>
 
       {/* Client Testimonials */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-brand-50/30 to-tech-50/30">
+      <section className="py-8 lg:py-12 bg-gradient-to-br from-brand-50/30 to-tech-50/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-brand-100 text-brand-800 border-brand-200">
@@ -1319,7 +1263,7 @@ export default function Index() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 lg:py-32">
+      <section id="contact" className="py-8 lg:py-12">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-brand-100 text-brand-800 border-brand-200">
@@ -1367,7 +1311,7 @@ export default function Index() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Location</h3>
               <p className="text-muted-foreground mb-4">Visit our office</p>
-              <address className="text-sm not-italic text-muted-foreground leading-relaxed">
+              <address className="text-brand-600 hover:text-brand-700 font-medium">
                 SCO 393, 2nd floor Sector - 37 D, Chandigarh
                 <br /><br />
                 <strong>B.O. :</strong> Plot No. 1025, Rani Sati Nagar, Nirman Nagar, Jaipur-302019

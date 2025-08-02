@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
+import Navbar from "@/components/ui/Navbar";
 export default function StartProject() {
   const [formData, setFormData] = useState({
     name: "",
@@ -35,16 +35,7 @@ export default function StartProject() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4">
-          <div className="flex h-16 items-center justify-between">
-            <Link to="/" className="flex items-center gap-2 hover:text-brand-600 transition-colors">
-              <ArrowLeft className="w-5 h-5" />
-              <span className="font-semibold">Back to Home</span>
-            </Link>
-          </div>
-        </div>
-      </header>
+     <Navbar />
 
       <main className="py-20 lg:py-32">
         <div className="container mx-auto px-4">

@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
+import Navbar from "@/components/ui/Navbar";
 export default function InteriorDesign() {
   const coreServices = [
     {
@@ -142,34 +142,26 @@ export default function InteriorDesign() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4">
-          <div className="flex h-16 items-center justify-between">
-            <Link to="/" className="flex items-center gap-2 hover:text-brand-600 transition-colors">
-              <ArrowLeft className="w-5 h-5" />
-              <span className="font-semibold">Back to Home</span>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Navbar />
+
 
       {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-brand-50/50 to-tech-50/50">
         <div className="container mx-auto px-4 text-center">
-          <Badge className="mb-4 bg-brand-100 text-brand-800 border-brand-200">
+          <Badge className="mb-4 bg-brand-100 text-brand-800 border-brand-200 animate-bounce-in">
             Interior & Infrastructure
           </Badge>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-6">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-6 animate-fade-in-up">
             Infrastructure & Maintenance Services
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up">
             Comprehensive solutions for maintaining and enhancing your physical infrastructure across hundreds of locations.
           </p>
-          <div className="mt-10 flex justify-center">
+          <div className="mt-10 flex justify-center animate-fade-in-up">
             <a href="#portfolio">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-brand-600 to-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="button-glow bg-gradient-to-r from-brand-600 to-brand-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover-lift"
               >
                 View Our Work
               </Button>
@@ -179,7 +171,7 @@ export default function InteriorDesign() {
       </section>
 
       {/* About Our Company Section */}
-      <section id="about" className="py-20 lg:py-32">
+      <section id="about" className="py-8 lg:py-12">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -211,18 +203,22 @@ export default function InteriorDesign() {
       </section>
 
       {/* Core Services Section */}
-      <section id="services" className="py-16 lg:py-24 bg-muted/30">
+      <section id="services" className="py-8 lg:py-12 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Our Core Services</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 animate-fade-in-up">Our Core Services</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up">
               We offer a wide range of services to ensure your facilities are always operational and compliant.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {coreServices.map((service) => (
-              <Card key={service.title} className="text-center p-6 hover:shadow-lg transition-shadow">
-                <div className="inline-flex p-4 rounded-full bg-brand-100 mb-4">{service.icon}</div>
+            {coreServices.map((service, index) => (
+              <Card 
+                key={service.title} 
+                className="text-center p-6 hover:shadow-lg transition-all duration-300 hover-lift animate-fade-in-up"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                <div className="inline-flex p-4 rounded-full bg-brand-100 mb-4 animate-float">{service.icon}</div>
                 <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
                 <p className="text-sm text-muted-foreground">{service.description}</p>
               </Card>
@@ -232,15 +228,20 @@ export default function InteriorDesign() {
       </section>
 
       {/* Industries Served Section */}
-      <section id="industries" className="py-16 lg:py-24">
+      <section id="industries" className="py-8 lg:py-12">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Industries We Serve</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
             Our expertise caters to the unique needs of various high-stakes industries.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            {industriesServed.map((industry) => (
-              <Badge key={industry} variant="outline" className="text-lg px-6 py-2">
+            {industriesServed.map((industry, index) => (
+              <Badge 
+                key={industry} 
+                variant="outline" 
+                className="text-lg px-6 py-3 border-2 hover:border-brand-500 hover:bg-brand-50 hover:text-brand-700 transition-all duration-300 hover:scale-105 hover:shadow-md animate-in slide-in-from-bottom-4 duration-700"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 {industry}
               </Badge>
             ))}
@@ -249,7 +250,7 @@ export default function InteriorDesign() {
       </section>
 
       {/* Clients Section */}
-      <section id="clients" className="py-16 lg:py-24 bg-muted/30">
+      <section id="clients" className="py-8 lg:py-12 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Trusted By The Best</h2>
@@ -257,18 +258,20 @@ export default function InteriorDesign() {
               We are proud to partner with leading brands across India, ensuring their operations run smoothly.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
-            {clients.map((client) => (
-              <div key={client} className="text-center">
-                <p className="text-lg font-semibold text-muted-foreground">{client}</p>
-              </div>
-            ))}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll-x space-x-12 py-4">
+              {[...clients, ...clients].map((client, index) => (
+                <div key={index} className="flex-shrink-0 text-center">
+                  <p className="text-lg font-semibold text-muted-foreground whitespace-nowrap">{client}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Our Latest Projects Section */}
-      <section id="portfolio" className="py-16 lg:py-24">
+      <section id="portfolio" className="py-8 lg:py-12">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-brand-100 text-brand-800 border-brand-200">
@@ -282,8 +285,12 @@ export default function InteriorDesign() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <Card key={project.id} className="overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+            {projects.map((project, index) => (
+              <Card 
+                key={project.id} 
+                className="overflow-hidden hover:shadow-xl transition-all duration-300 group hover-lift animate-fade-in-up"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
                 <CardContent className="p-0">
                   <img
                     src={project.imageSrc}
@@ -302,7 +309,7 @@ export default function InteriorDesign() {
       </section>
 
       {/* Why Us Section */}
-      <section id="why-us" className="py-16 lg:py-24">
+      <section id="why-us" className="py-8 lg:py-12">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Why Bhavya Enterprises?</h2>
@@ -311,10 +318,14 @@ export default function InteriorDesign() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {whyUs.map((item) => (
-              <Card key={item.title} className="p-6">
+            {whyUs.map((item, index) => (
+              <Card 
+                key={item.title} 
+                className="p-6 hover-lift animate-fade-in-up"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 <div className="flex items-center gap-4">
-                  <div className="text-brand-600">{item.icon}</div>
+                  <div className="text-brand-600 animate-float">{item.icon}</div>
                   <div>
                     <h3 className="text-lg font-semibold">{item.title}</h3>
                     <p className="text-sm text-muted-foreground">{item.description}</p>
@@ -327,7 +338,7 @@ export default function InteriorDesign() {
       </section>
 
       {/* Images Gallery Section */}
-      <section id="gallery" className="py-16 lg:py-24 bg-gradient-to-br from-muted/30 to-white">
+      <section id="gallery" className="py-8 lg:py-12 bg-gradient-to-br from-muted/30 to-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Our Interior Design Portfolio</h2>
@@ -335,24 +346,25 @@ export default function InteriorDesign() {
               Explore our real project spaces, designed for comfort, style, and productivity.
             </p>
           </div>
-          <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 space-y-6 max-w-7xl mx-auto">
-            {[1,2,3,4,5,6,7,8].map((num) => (
-              <div key={num} className="relative mb-6 rounded-2xl overflow-hidden shadow-xl bg-white transition-transform hover:scale-105 group">
-                <img
-                  src={`/Interior${num}.png`}
-                  alt={`Interior Project ${num}`}
-                  className="w-full h-auto object-cover aspect-[4/5] group-hover:brightness-90 transition-all duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                {/* Optionally, add a caption or icon overlay here */}
-              </div>
-            ))}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll-x space-x-6 py-4">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => (
+                <div key={index} className="flex-shrink-0 w-80 rounded-2xl overflow-hidden shadow-xl bg-white transition-transform hover:scale-105 group">
+                  <img
+                    src={`/Interior${num}.png`}
+                    alt={`Interior Project ${num}`}
+                    className="w-full h-64 object-cover group-hover:brightness-90 transition-all duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 lg:py-32">
+      <section id="contact" className="py-8 lg:py-12">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-brand-100 text-brand-800 border-brand-200">
@@ -367,39 +379,39 @@ export default function InteriorDesign() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="text-center p-8 hover:shadow-lg transition-shadow border-border/50">
-              <div className="inline-flex p-4 rounded-full bg-gradient-to-br from-brand-100 to-tech-100 text-brand-700 mb-6">
+            <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 hover-lift animate-fade-in-up border-border/50">
+              <div className="inline-flex p-4 rounded-full bg-gradient-to-br from-brand-100 to-tech-100 text-brand-700 mb-6 animate-float">
                 <Phone className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Phone</h3>
               <p className="text-muted-foreground mb-4">
                 Call us for immediate assistance
               </p>
-              <a href="tel:+919988818489" className="text-brand-600 hover:text-brand-700 font-medium">+91 99888 18489</a>
+              <a href="tel:+919988818489" className="text-brand-600 hover:text-brand-700 font-medium transition-colors duration-200">+91 99888 18489</a>
               <br />
-              <a href="tel:01724031600" className="text-brand-600 hover:text-brand-700 font-medium">0172-4031600</a>
+              <a href="tel:01724031600" className="text-brand-600 hover:text-brand-700 font-medium transition-colors duration-200">0172-4031600</a>
             </Card>
 
-            <Card className="text-center p-8 hover:shadow-lg transition-shadow border-border/50">
-              <div className="inline-flex p-4 rounded-full bg-gradient-to-br from-tech-100 to-brand-100 text-tech-700 mb-6">
+            <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 hover-lift animate-fade-in-up border-border/50" style={{ animationDelay: '100ms' }}>
+              <div className="inline-flex p-4 rounded-full bg-gradient-to-br from-tech-100 to-brand-100 text-tech-700 mb-6 animate-float">
                 <Mail className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Email</h3>
               <p className="text-muted-foreground mb-4">
                 Send us your requirements
               </p>
-              <a href="mailto:bhavyaenterpriseschd@gmail.com" className="text-tech-600 hover:text-tech-700 font-medium">bhavyaenterpriseschd@gmail.com</a>
+              <a href="mailto:bhavyaenterpriseschd@gmail.com" className="text-tech-600 hover:text-tech-700 font-medium transition-colors duration-200">bhavyaenterpriseschd@gmail.com</a>
               <br />
-              <a href="mailto:helpdesk@bhavyaenterprises.com" className="text-tech-600 hover:text-tech-700 font-medium">helpdesk@bhavyaenterprises.com</a>
+              <a href="mailto:helpdesk@bhavyaenterprises.com" className="text-tech-600 hover:text-tech-700 font-medium transition-colors duration-200">helpdesk@bhavyaenterprises.com</a>
             </Card>
 
-            <Card className="text-center p-8 hover:shadow-lg transition-shadow border-border/50">
-              <div className="inline-flex p-4 rounded-full bg-gradient-to-br from-brand-100 to-tech-100 text-brand-700 mb-6">
+            <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 hover-lift animate-fade-in-up border-border/50" style={{ animationDelay: '200ms' }}>
+              <div className="inline-flex p-4 rounded-full bg-gradient-to-br from-brand-100 to-tech-100 text-brand-700 mb-6 animate-float">
                 <MapPin className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Location</h3>
               <p className="text-muted-foreground mb-4">Visit our office</p>
-              <address className="text-sm not-italic text-muted-foreground leading-relaxed">
+              <address className="text-brand-600 hover:text-brand-700 font-medium transition-colors duration-200">
                 SCO 393, 2nd floor Sector - 37 D, Chandigarh
                 <br /><br />
                 <strong>B.O. :</strong> Plot No. 1025, Rani Sati Nagar, Nirman Nagar, Jaipur-302019

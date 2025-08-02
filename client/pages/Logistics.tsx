@@ -16,7 +16,7 @@ import {
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-
+import Navbar from "@/components/ui/Navbar";
 export default function Logistics() {
   const coreServices = [
     {
@@ -86,16 +86,8 @@ export default function Logistics() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4">
-          <div className="flex h-16 items-center justify-between">
-            <Link to="/" className="flex items-center gap-2 hover:text-brand-600 transition-colors">
-              <ArrowLeft className="w-5 h-5" />
-              <span className="font-semibold">Back to Home</span>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Navbar />
+
 
       {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-brand-50/50 to-tech-50/50">
@@ -204,43 +196,43 @@ export default function Logistics() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img 
-                src="https://plus.unsplash.com/premium_photo-1682146404239-fb9dffbe6ce2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzAxfHxsb2dpc3RpY3N8ZW58MHx8MHx8fDA%3D" 
+              <img
+                src="https://plus.unsplash.com/premium_photo-1682146404239-fb9dffbe6ce2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzAxfHxsb2dpc3RpY3N8ZW58MHx8MHx8fDA%3D"
                 alt="Warehouse Operations"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img 
-                src="https://plus.unsplash.com/premium_photo-1681426728047-2164a00fe3dc?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjI5fHxsb2dpc3RpY3N8ZW58MHx8MHx8fDA%3D" 
+              <img
+                src="https://plus.unsplash.com/premium_photo-1681426728047-2164a00fe3dc?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjI5fHxsb2dpc3RpY3N8ZW58MHx8MHx8fDA%3D"
                 alt="Logistics Transportation"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img 
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&crop=center" 
+              <img
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&crop=center"
                 alt="Package Sorting"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img 
-                src="https://cdn.pixabay.com/photo/2024/10/01/02/17/ai-generated-9087011_1280.jpg" 
+              <img
+                src="https://cdn.pixabay.com/photo/2024/10/01/02/17/ai-generated-9087011_1280.jpg"
                 alt="Delivery Network"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img 
-                src="https://cdn.pixabay.com/photo/2019/05/12/06/14/container-4197259_1280.jpg" 
+              <img
+                src="https://cdn.pixabay.com/photo/2019/05/12/06/14/container-4197259_1280.jpg"
                 alt="Supply Chain Management"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img 
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+              <img
+                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Logistics Technology"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Eye } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-
+import Navbar from "@/components/ui/Navbar";
 const portfolioProjects = [
   {
     title: "Modern Urban Apartment",
@@ -45,16 +45,8 @@ const portfolioProjects = [
 export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4">
-          <div className="flex h-16 items-center justify-between">
-            <Link to="/" className="flex items-center gap-2 hover:text-brand-600 transition-colors">
-              <ArrowLeft className="w-5 h-5" />
-              <span className="font-semibold">Back to Home</span>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Navbar />
+
 
       <main>
         <section className="py-20 lg:py-32 bg-gradient-to-br from-brand-50/50 to-tech-50/50">

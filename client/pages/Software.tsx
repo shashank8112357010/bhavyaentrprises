@@ -21,7 +21,7 @@ import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
+import Navbar from "@/components/ui/Navbar";
 export default function Software() {
   const coreServices = [
     {
@@ -95,16 +95,8 @@ export default function Software() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4">
-          <div className="flex h-16 items-center justify-between">
-            <Link to="/" className="flex items-center gap-2 hover:text-tech-600 transition-colors">
-              <ArrowLeft className="w-5 h-5" />
-              <span className="font-semibold">Back to Home</span>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Navbar />
+
 
       {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-tech-50/50 to-brand-50/50">
